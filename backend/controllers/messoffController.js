@@ -17,7 +17,7 @@ exports.requestMessOff = async (req, res) => {
         return res.status(400).json({success, "message": "Leaving date cannot be greater than return date"});
     }
     else if (new Date(leaving_date) < today) {
-        return res.status(400).json({success, "message": "Request cannot be made for past Mess off"});
+        return res.status(400).json({success, "message": "Request cannot be made for past Leave"});
     }
     try {
         const messOff = new MessOff({
@@ -27,7 +27,7 @@ exports.requestMessOff = async (req, res) => {
         });
         await messOff.save();
         success = true;
-        return res.status(200).json({success, "message": "Mess off request sent successfully"});
+        return res.status(200).json({success, "message": "Leave request sent successfully"});
     } catch (err) {
         console.error(err.message);
         return res.status(500).json({success, "message": "Server Error"});

@@ -28,7 +28,7 @@ function Mess() {
       setRequests(requests+1);
       setLeaveDate("");
       setReturnDate("");
-      toast.success('Mess Off Requested Succesfully!', {
+      toast.success('Leave Requested Succesfully!', {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -116,7 +116,7 @@ function Mess() {
     setLoading(false);
   }, [requests]);
 
-  const labels = ["Mess Off", "Requested Mess Off", "Mess Attended"];
+  const labels = ["Leave", "Leave", "Attended"];
   const loader = (
     <svg
       aria-hidden="true"
@@ -139,10 +139,10 @@ function Mess() {
   return (
     
     <div className="w-full h-screen gap-10 flex flex-col items-center justify-center max-h-screen overflow-y-auto pt-[500px] sm:pt-96 md:pt-96 lg:pt-40">
-      <h1 className="text-white font-bold text-5xl">Mess Off</h1>
+      <h1 className="text-white font-bold text-5xl">Leave</h1>
       <ul className="flex gap-5 text-white text-xl px-5 sm:p-0 text-center">
-        <li>Total Mess: {daysofmonthtilltoday - Messoff} </li>
-        <li>Mess Off: {loading ? loader : Messoff}</li>
+        <li>Total Leave: {daysofmonthtilltoday - Messoff} </li>
+        <li>Leave: {loading ? loader : Messoff}</li>
         <li>Requests Sent: {loading ? loader : requests}</li>
       </ul>
       <div className="w-full gap-10 flex items-center justify-center flex-wrap">
@@ -175,16 +175,16 @@ function Mess() {
           <ul className="text-white">
             <li className="flex gap-2">
               {" "}
-              <span className="w-10 h-5 bg-orange-500 block"></span> Mess Off
+              <span className="w-10 h-5 bg-orange-500 block"></span>Leave
             </li>
             <li className="flex gap-2">
               {" "}
               <span className="w-10 h-5 bg-yellow-500 block"></span> Requested
-              Mess
+              Leave
             </li>
             <li className="flex gap-2">
               {" "}
-              <span className="w-10 h-5 bg-blue-500 block"></span> Mess
+              <span className="w-10 h-5 bg-blue-500 block"></span>
               Attended
             </li>
           </ul>
@@ -236,7 +236,7 @@ function Mess() {
           {loading ? (
             <div>{loader} Sending Request...</div>
           ) : (
-            "Request Mess off"
+            "Request leave"
           )}
         </button>
         <ToastContainer

@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 Sidebar.propTypes = {
-  links: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    for: PropTypes.string.isRequired,
-    svg: PropTypes.element.isRequired,
-  }).isRequired,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      for: PropTypes.string.isRequired,
+      svg: PropTypes.element.isRequired,
+    })
+  ).isRequired,
 };
 
 function Sidebar({ links }) {
@@ -28,7 +30,7 @@ function Sidebar({ links }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const setWindowDimensions = () => {
     setWindowWidth(window.innerWidth);
-    if(window.innerWidth >= 768) {
+    if (window.innerWidth >= 768) {
       setIsOpen(true);
     }
   };
@@ -95,7 +97,6 @@ function Sidebar({ links }) {
           <span className="md:hidden lg:inline">Dashboard</span>
         </Link>
         <div className="flex flex-col space-y-1 text-2xl text-white">
-          {/*eslint-disable-next-line react/prop-types*/}
           {links.map((link) => (
             <Link
               to={link.url}
@@ -107,7 +108,13 @@ function Sidebar({ links }) {
               }`}
             >
               {link.svg}
-              {link.text}
+              {/* Replace "Mess" with "Leave" for specific link */}
+              {
+            link.url === "/student-dashboard/mess" || link.url === "/admin-dashboard/mess"
+            ? "Leave"
+           : link.text
+}
+
             </Link>
           ))}
         </div>

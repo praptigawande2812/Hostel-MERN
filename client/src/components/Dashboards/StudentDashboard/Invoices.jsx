@@ -85,7 +85,7 @@ function Invoices() {
               <li className="py-3 sm:py-4" key="1">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0 text-white">
-                    {invoice.status.toLowerCase() === "pending" ? (
+        
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -100,22 +100,7 @@ function Invoices() {
                           d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
-                    ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-8 h-8"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 12.75l6 6 9-13.5"
-                        />
-                      </svg>
-                    )}
+                     
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium truncate text-white">

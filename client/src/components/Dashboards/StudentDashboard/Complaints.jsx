@@ -110,8 +110,8 @@ function Complaints() {
         body: JSON.stringify(cmpln),
       });
       const data = await res.json();
-      let complaints = data.complaints;
-      complaints = complaints.map((complaint) => {
+      let complaint = data.complaints;
+      complaint = complaint.map((complaint) => {
         var date = new Date(complaint.date);
         complaint.date = date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
         return {

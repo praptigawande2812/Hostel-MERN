@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function HeroSection() {
   return (
     <main className="flex flex-col lg:flex-row-reverse justify-center align-center  text-white text-center">
-      {/* <img src={heroImg} alt='nust-hostel-img' className='opacity-[0.05] absolute top-[50vh] left-[50vw] translate-x-[-50%] translate-y-[-50%] select-none' /> */}
+      
       <div className="w-[70%] pl-40 animate-pulse lg:w-[30%] lg:p-0">
         <HeroSVG />
       </div>

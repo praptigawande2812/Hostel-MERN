@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Input } from "../../LandingSite/AuthPage/Input";
 import { Doughnut } from "react-chartjs-2";
-import "chart.js/auto"; // !IMPORTANT
+import "chart.js/auto"; //  Ensures the Chart.js library is correctly loaded.
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -141,7 +141,7 @@ function Mess() {
     <div className="w-full h-screen gap-10 flex flex-col items-center justify-center max-h-screen overflow-y-auto pt-[500px] sm:pt-96 md:pt-96 lg:pt-40">
       <h1 className="text-white font-bold text-5xl">Leave</h1>
       <ul className="flex gap-5 text-white text-xl px-5 sm:p-0 text-center">
-        <li>Total Leave: {daysofmonthtilltoday - Messoff} </li>
+        <li>Total Attended: {daysofmonthtilltoday - Messoff} </li>
         <li>Leave: {loading ? loader : Messoff}</li>
         <li>Requests Sent: {loading ? loader : requests}</li>
       </ul>

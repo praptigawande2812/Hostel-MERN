@@ -5,6 +5,7 @@ export default function Index() {
     <>
       <Navbar />
       <Outlet />
+      {/* the child routes (defined in react-router-dom) will be rendered dynamically */}
     </>
   )
 }
